@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.Calendar;
+import java.text.DateFormat;
 
 public class Gradebook {
 	static Scanner sc = new Scanner(System.in);
@@ -28,7 +30,7 @@ public class Gradebook {
 			genders[i] = "";
 			majors[i] = "";
 			statesOfOrigin[i] = "";
-			grades[i] = -1;
+			grades[i] = 0;
 		}
 	}
 
@@ -85,8 +87,10 @@ public class Gradebook {
 	{
 		double overallAverage = 0;
 		String choice = "";
+		Calendar currentDate = Calendar.getInstance();
+		DateFormat df = DateFormat.getDateInstance();
 		
-		System.out.println("\nReport Date: 3/4/2016");
+		System.out.printf("\nReport Date: %s%n", df.format(currentDate.getTime()));
 		System.out.printf("Number of Students: %d%n", count);
 		if(count == 0)
 		{
